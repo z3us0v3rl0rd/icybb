@@ -8,15 +8,11 @@
 // Prepare connection to the database
 include "pdo-mysqli.php";
 
-// If connecting to the database fails
-if(! $conn ) {
-die('Could not connect: ' . mysql_error());
-}
-
 // Assign the post request data to variables.
 $username = mysqli_real_escape_string($_POST['username']);
 $displayname = mysqli_real_escape_string($_POST['displayname']);
-$password = mysqli_real_escape_string($_POST['password']);
+$password = mysqli_real_escape_string(sha1($_POST['password'])); // Passwords use an SHA1 Hash for now. This will be changed to a more secure password hashing system before an actual release.
+
 
 // Input the variables into the database
 function register($username, $displayname, $password) {

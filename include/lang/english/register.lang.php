@@ -5,4 +5,7 @@
     License: GPL3.0
 */
 
-$l['register_welcome'] = "Welcome to IceBB. We are glad you decided to register an account on our demo.";
+$l['register_pagetitle'] = "<title>" . $boardtitle . " - System Registration</title>";
+$l['register_begindiv'] = "<div class=\"container-fluid\">";
+$l['register_pageheader'] = "<h1>" . $boardtitle . "- System Registration</h1><hr>";
+$l['register_enddiv'] = "</div>";
