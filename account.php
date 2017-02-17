@@ -27,7 +27,7 @@ elseif($_GET['request']="login") {
     echo $l['global_bodybegin'];
     echo $l['login_begindiv'];
     echo $l['login_pageheader'];
-    echo $l['login_enddiv'] = "</div>";
+    echo $l['login_enddiv'];
     
     echo $l['global_bodyend'];
     echo $l['global_htmlend'];
