@@ -15,24 +15,38 @@ die('Could not connect: ' . mysql_error());
 
 // Assign the post request data to variables.
 $username = mysqli_real_escape_string($_POST['username']);
+$displayname = mysqli_real_escape_string($_POST['displayname']);
 $password = mysqli_real_escape_string($_POST['password']);
-$passwordv = mysqli_real_escape_string($_POST['passwordv']);
-$email = mysqli_real_escape_string($_POST['email']);
-$dobday = mysqli_real_escape_string($_POST['dobday']);
-$dobmonth = mysqli_real_escape_string($_POST['dobmonth']);
-$dobyear = mysqli_real_escape_string($_POST['dobyear']);
 
 // Input the variables into the database
-function register($username, $password, $email, $dobday, $dobmonth, $dobyear) {
-
-     $sql = 'INSERT INTO users '.
-      '(username, password, email, dobdate, dobmonth, dobyear, join_date) '.
-      'VALUES ($username, $password, $email, $dobday, $dobmonth, $dobyear, NOW() )';
-  
+function register($username, $displayname, $password) {
+    
+    try {
+        
+        // Prepare the connection
+        $conn = new PDO("mysql:host=$mysqlihost, dbname=$dbname, username=$mysqliuser, password=$mysqlipass");
+        
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        // Prepare SQL and Bind Parameters
+        $stmt = $conn->prepare("INSERT INTO users (username, displayname, password_hash, password_salt, gid) VALUES (:username, :displayname, :password_hash, :password_salt, :gid)");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':displayname', $displayname);
+        $stmt->bindParam(':password_hash', $password_hash);
+        $stmt->bindParam(':password_salt', $password_salt);
+        $stmt->bindParam(':gid', $gid);
+        
+        // Executate SQL
+        $stmt->execute();
+        }
+    
+    // In event of some error
+    catch(PDOException $e)
+    {
+    echo "Error: " . $e->getMessage();
+    }
+    
+    // Clear Connection Variable
+    $conn = null;
 }
-
-/* if (// all info verify) {
-  register($username, $password, $email, $dobday, $dobmonth, $dobyear);
-  } */
-
-?>
