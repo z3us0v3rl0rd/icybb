@@ -1,3 +1,8 @@
+/* 
+    icybb 0.1
+    Copyright 2017 - IcyBB Project
+    License: GPL3.0
+*/
 DROP TABLE IF EXISTS `icebb_members`;
 CREATE TABLE `icebb_members` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
