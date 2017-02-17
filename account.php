@@ -5,7 +5,7 @@
     License: GPL3.0
 */
 include_once "./global.php";
-include_once "./include/lang/english/global.lang.php";
+include_once "./include/lang/" . $boardlanguage . "/global.lang.php";
 
 if(empty($_GET)) {
     
@@ -14,7 +14,7 @@ if(empty($_GET)) {
 elseif($_GET['request']="login") {
     
     // Include required assets for login
-    include_once "./include/lang/english/login.lang.php";
+    include_once "./include/lang/" . $boardlanguage . "/login.lang.php";
     
     // Begin building page
     echo $l['global_htmldoctype'];
@@ -36,7 +36,7 @@ elseif($_GET['request']="login") {
 elseif($_GET['request']="register") {
       
     // Include required assets for registration
-    include_once "./include/lang/english/register.lang.php";  
+    include_once "./include/lang/" . $boardlanguage . "/register.lang.php";  
 }
 
 else{

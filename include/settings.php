@@ -6,3 +6,4 @@
 */
 
 $boardtitle = "IceBB";
+$boardlanguage = "english";

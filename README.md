@@ -3,4 +3,5 @@ Hi there and I just wanted to thank you for checking out my project IceBB. IceBB
 
 ## Current Timeline
 * I'm working on the account system this weekend and I hope to get login and registration complete.
+* Basic things will take longer since all HTML utilizes the language file system. It's annoying right now but remember that it'll make things like translation projects and such a lot easier in the long run.
 * 
