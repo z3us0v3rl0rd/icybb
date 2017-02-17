@@ -5,10 +5,11 @@
     License: GPL3.0
 */
 include_once "./global.php";
+include_once "./include/lang/" . $boardlanguage . "/account.lang.php";
 include_once "./include/lang/" . $boardlanguage . "/global.lang.php";
 
 if(empty($_GET)) {
-    
+    echo $l['account_noaction'];
 }
 
 elseif($_GET['request']="login") {
@@ -20,13 +21,13 @@ elseif($_GET['request']="login") {
     echo $l['global_htmldoctype'];
     echo $l['global_htmlheadbegin'];
     
-    echo $l['login_pagetitle'];
+    echo htmlspecialchars($l['login_pagetitle']);
     
     echo $l['global_htmlheadinclude'];
     echo $l['global_htmlheadend'];
     echo $l['global_bodybegin'];
     echo $l['login_begindiv'];
-    echo $l['login_pageheader'];
+    echo htmlspecialchars($l['login_pageheader']);
     echo $l['login_enddiv'];
     
     echo $l['global_bodyend'];
@@ -37,8 +38,7 @@ elseif($_GET['request']="register") {
       
     // Include required assets for registration
     include_once "./include/lang/" . $boardlanguage . "/register.lang.php";  
-}
-
-else{
-    die();
+} 
+else($_GET) {
+    $l['account_invalidaction'];
 }

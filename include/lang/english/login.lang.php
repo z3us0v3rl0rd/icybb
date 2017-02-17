@@ -5,8 +5,8 @@
     License: GPL3.0
 */
 
-$l['login_pagetitle'] = "<title>" . htmlspecialchars($boardtitle) . " - System Login</title>";
+$l['login_pagetitle'] = "<title>" . $boardtitle . " - System Login</title>";
 
 $l['login_begindiv'] = "<div class=\"container-fluid\">";
-$l['login_pageheader'] = "<h1>" . htmlspecialchars($boardtitle) . "- System Login </h1>";
+$l['login_pageheader'] = "<h1>" . $boardtitle . "- System Login </h1>";
 $l['login_enddiv'] = "</div>";
