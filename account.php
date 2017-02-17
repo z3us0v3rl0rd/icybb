@@ -73,4 +73,21 @@ switch ($request) {
         echo $l['global_bodyend'];
         echo $l['global_htmlend'];
     break;
+    
+    default:
+        // Build page
+        echo $l['global_htmldoctype'];
+        echo $l['global_htmlheadbegin'];
+        echo $l['account_pagetitle'];
+        echo $l['global_htmlheadinclude'];
+        echo $l['global_htmlheadend'];
+        echo $l['global_bodybegin'];
+
+        echo $l['account_begindiv'];
+        echo $l['account_pageheader'];
+        echo $l['account_noaction'];
+        echo $l['account_enddiv'];
+
+        echo $l['global_bodyend'];
+        echo $l['global_htmlend']; 
 }
