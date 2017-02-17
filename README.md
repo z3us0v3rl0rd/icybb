@@ -3,8 +3,10 @@ Hi there and I just wanted to thank you for checking out my project IcyBB. IcyBB
 
 ## Current Timeline
 * I'm working on the account system this weekend and I hope to get login and registration complete.
-* Basic things will take longer since all HTML utilizes the language file system. It's annoying right now but remember that it'll make things like translation projects and such a lot easier in the long run.
 * 
+
+## Long Term Projects
+* Currently all HTML and Text is done through the language file system. At some point I hope to have an SQL-Based Template System. For the time being the language file system works but it will make any html edits difficult. At some point a team member will need to come and fix this. This is not a priority as it does make development a bit easier for the time being.
 
 ## Name changed (IceBB to IcyBB)
 To avoid any confusion I changed the name from IceBB to IcyBB after realizing an IceBB project already existed. I was going to just keep the name but I changed my mind after I decided to make a Github Organization to house the project.
